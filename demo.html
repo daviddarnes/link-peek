@@ -10,30 +10,28 @@
   </head>
   <body>
     <h2>General usage example</h2>
-    <component-name>
-      <button>Button</button>
-    </component-name>
-    <hr />
-    <h2>Example using a fallback method</h2>
-    <component-name>
-      <button>Button</button>
-      <a href="#">Anchor</a>
-    </component-name>
-    <style>
-      component-name:not(:defined) button,
-      component-name:defined a {
-        display: none;
-      }
-    </style>
-    <hr />
-    <h2>Example using options or additional fallback method</h2>
-    <component-name attribute="value">
-      <button>Button</button>
-    </component-name>
-    <style>
-      component-name[attribute="value"] {
-        outline: 1px solid red;
-      }
-    </style>
+    <template id="link-peek-template">
+      <figure>
+        <figcaption>
+          <a data-key="data.title, link"></a>
+          <p data-key="data.description"></p>
+          <img data-key="data.logo.url" />
+          <small data-key="data.publisher"></small>
+        </figcaption>
+        <img data-key="data.image.url" />
+      </figure>
+    </template>
+
+    <link-peek api="https://api.microlink.io/?url=${link}">
+      <a href="https://darn.es">David Darnes</a>
+    </link-peek>
+    <br>
+    <link-peek api="https://api.microlink.io/?url=${link}">
+      <a href="https://nordhealth.design">Nord Design System</a>
+    </link-peek>
+    <br>
+    <link-peek api="https://api.microlink.io/?url=${link}">
+      <a href="https://github.com">GitHub</a>
+    </link-peek>
   </body>
 </html>
