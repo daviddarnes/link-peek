@@ -19,7 +19,7 @@ class LinkPeek extends HTMLElement {
   }
 
   populateSlot(slot, value) {
-    if (value.startsWith("http")) {
+    if (typeof value == "string" && value.startsWith("http")) {
       if (slot.localName === "img") slot.src = value;
       if (slot.localName === "a") slot.href = value;
     } else {
