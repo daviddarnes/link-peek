@@ -2,7 +2,7 @@
 
 A Web Component to unfurl regular links into rich previews.
 
-**[Demo](https://daviddarnes.github.io/link-peek/demo.html)** | **[Further reading](https://darn.es/link-peek-web-component/)**
+**[Demo](https://daviddarnes.github.io/link-peek/demo.html)** | **[Simple demo](https://daviddarnes.github.io/link-peek/demo-simple-example.html)** | **[Further reading](https://darn.es/link-peek-web-component/)**
 
 ## Examples
 
