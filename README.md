@@ -28,11 +28,17 @@ General usage example:
 </link-peek>
 ```
 
+In the above example we're utilising the [microlink](https://microlink.io) API to retrieve metadata of the linked page and then using the marked up template to present that data.
+
+_Note that there are no defaults set for the API or template being used. `link-peek` operates agnostically of these APIs for great control and independance. This also means we cannot assume a default built in template_
+
 ## Features
 
 This Web Component allows you to:
 
-- Check for…
+- Use public APIs to return and present metadata on a linked web page
+- Create custom templates for your 'unfurled' link previews for greater design control
+- Use any public API to populate your 'unfurled' previews
 
 ## Installation
 
