@@ -50,7 +50,7 @@ class LinkPeek extends HTMLElement {
 
   get template() {
     return document
-      .getElementById("link-peek-template")
+      .getElementById(`${this.localName}-template`)
       .content.cloneNode(true);
   }
 
