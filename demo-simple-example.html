@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demo of link-peek Web Component" />
+    <title>link-peek Web Component Demo</title>
+
+    <script type="module" src="link-peek.js"></script>
+  </head>
+  <body>
+    <h2>Simple example</h2>
+    <template id="link-peek-template">
+      <p data-key="data.description"></p>
+    </template>
+
+    <link-peek api="https://api.microlink.io/?url=${link}">
+      <a href="https://darn.es">David Darnes</a>
+    </link-peek>
+  </body>
+</html>
