@@ -1,6 +1,6 @@
 # `link-peek`
 
-A Web Component for…
+A Web Component to unfurl regular links into rich previews.
 
 **[Demo](https://daviddarnes.github.io/link-peek/demo.html)** | **[Further reading](https://darn.es/link-peek-web-component/)**
 
