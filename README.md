@@ -48,6 +48,26 @@ You have a few options (choose one of these):
 1. [Download the source manually from GitHub](https://github.com/daviddarnes/link-peek/releases) into your project.
 1. Skip this step and use the script directly via a 3rd party CDN (not recommended for production use)
 
+## Templating
+
+Templates are created using the `<template>` element with an ID of `link-peek-template`. Within the template you can use regular HTML elements and to populate them you use the `data-key` attribute to name the data point you want it to use. For example if I want to use the data point `data.description` to render a line of text I would write within my template `<p data-key="data.description"></p>`.
+
+Here's that same example in context:
+
+```html
+<script type="module" src="link-peek.js"></script>
+
+<template id="link-peek-template">
+  <p data-key="data.description"></p>
+</template>
+
+<link-peek api="https://api.microlink.io/?url=${link}">
+  <a href="https://darn.es">David Darnes</a>
+</link-peek>
+```
+
+_Note that for <a> and <img> elements the value won't be applied to it's content if the string being returned starts with http and instead will be applied to the href and src attributes respectively._
+
 ### Usage
 
 Make sure you include the `<script>` in your project (choose one of these):
