@@ -4,9 +4,47 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Demo of link-peek Web Component" />
-    <title>component-name Web Component Demo</title>
+    <title>link-peek Web Component Demo</title>
 
-    <script type="module" src="component-name.js"></script>
+    <style>
+      :root {
+        font-family: system-ui;
+      }
+      
+      link-peek:defined figure {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+        gap: 1rem;
+        max-inline-size: max-content;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        margin: 0;
+      }
+      
+      link-peek:defined a:not([data-key]) {
+        display: none;
+      }
+      
+      link-peek img[data-key="data.image.url"] {
+        max-inline-size: 100%;
+        block-size: auto;
+      }
+      
+      link-peek img[data-key="data.logo.url"] {
+        inline-size: 1rem;
+        block-size: 1rem;
+        vertical-align: middle;
+      }
+      
+      link-peek a[data-key]::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+    </style>
+
+    <script type="module" src="link-peek.js"></script>
   </head>
   <body>
     <h2>General usage example</h2>
