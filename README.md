@@ -13,14 +13,14 @@ General usage example:
 
 <template id="link-peek-template">
   <figure>
-  <figcaption>
-    <a data-key="data.title, link"></a>
-    <p data-key="data.description"></p>
-    <img data-key="data.logo.url" />
-    <small data-key="data.publisher"></small>
-  </figcaption>
-  <img data-key="data.image.url" />
-</figure>
+    <figcaption>
+      <a data-key="data.title, link"></a>
+      <p data-key="data.description"></p>
+      <img data-key="data.logo.url" />
+      <small data-key="data.publisher"></small>
+    </figcaption>
+    <img data-key="data.image.url" />
+  </figure>
 </template>
 
 <link-peek api="https://api.microlink.io/?url=${link}">
@@ -37,7 +37,8 @@ _Note that there are no defaults set for the API or template being used. `link-p
 This Web Component allows you to:
 
 - Use public APIs to return and present metadata on a linked web page
-- Create custom templates for your 'unfurled' link previews for greater design control
+- Create custom templates for your 'unfurled' link previews using a `<template>` element and `data-key="name"` data attributes
+- Use a custom template for specific instances using the `template` attribute
 - Use any public API to populate your 'unfurled' previews
 
 ## Installation
@@ -66,6 +67,21 @@ Here's that same example in context:
 </link-peek>
 ```
 
+You can also use different templates on the same page by using the template attribute to target `<template>` elements with a specific `id`:
+
+```html
+<template id="custom-template">
+  <a data-key="data.description, data.url"></a>
+</template>
+
+<link-peek
+  api="https://api.microlink.io/?url=${link}"
+  template="custom-template"
+>
+  <a href="https://darn.es">David Darnes</a>
+</link-peek>
+```
+
 _Note that for <a> and <img> elements the value won't be applied to it's content if the string being returned starts with http and instead will be applied to the href and src attributes respectively._
 
 ### Usage
@@ -81,7 +97,7 @@ Make sure you include the `<script>` in your project (choose one of these):
 <!-- 3rd party CDN, not recommended for production use -->
 <script
   type="module"
-  src="https://www.unpkg.com/@daviddarnes/link-peek@1.0.0/link-peek.js"
+  src="https://www.unpkg.com/@daviddarnes/link-peek@1.1.0/link-peek.js"
 ></script>
 ```
 
@@ -89,7 +105,7 @@ Make sure you include the `<script>` in your project (choose one of these):
 <!-- 3rd party CDN, not recommended for production use -->
 <script
   type="module"
-  src="https://esm.sh/@daviddarnes/link-peek@1.0.0"
+  src="https://esm.sh/@daviddarnes/link-peek@1.1.0"
 ></script>
 ```
 
