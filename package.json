@@ -1,6 +1,6 @@
 {
   "name": "@daviddarnes/link-peek",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Web Component to unfurl regular links into rich previews",
   "main": "link-peek.js",
   "scripts": {
