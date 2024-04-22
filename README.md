@@ -13,14 +13,14 @@ General usage example:
 
 <template id="link-peek-template">
   <figure>
-  <figcaption>
-    <a data-key="data.title, link"></a>
-    <p data-key="data.description"></p>
-    <img data-key="data.logo.url" />
-    <small data-key="data.publisher"></small>
-  </figcaption>
-  <img data-key="data.image.url" />
-</figure>
+    <figcaption>
+      <a data-key="data.title, link"></a>
+      <p data-key="data.description"></p>
+      <img data-key="data.logo.url" />
+      <small data-key="data.publisher"></small>
+    </figcaption>
+    <img data-key="data.image.url" />
+  </figure>
 </template>
 
 <link-peek api="https://api.microlink.io/?url=${link}">
@@ -63,6 +63,21 @@ Here's that same example in context:
 </template>
 
 <link-peek api="https://api.microlink.io/?url=${link}">
+  <a href="https://darn.es">David Darnes</a>
+</link-peek>
+```
+
+You can also use different templates on the same page by using the template attribute to target `<template>` elements with a specific `id`:
+
+```html
+<template id="custom-template">
+  <a data-key="data.description, data.url"></a>
+</template>
+
+<link-peek
+  api="https://api.microlink.io/?url=${link}"
+  template="custom-template"
+>
   <a href="https://darn.es">David Darnes</a>
 </link-peek>
 ```
