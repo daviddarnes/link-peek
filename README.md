@@ -37,7 +37,8 @@ _Note that there are no defaults set for the API or template being used. `link-p
 This Web Component allows you to:
 
 - Use public APIs to return and present metadata on a linked web page
-- Create custom templates for your 'unfurled' link previews for greater design control
+- Create custom templates for your 'unfurled' link previews using a `<template>` element and `data-key="name"` data attributes
+- Use a custom template for specific instances using the `template` attribute
 - Use any public API to populate your 'unfurled' previews
 
 ## Installation

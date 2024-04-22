@@ -7,14 +7,33 @@
     <title>link-peek Web Component Demo</title>
 
     <script type="module" src="link-peek.js"></script>
+
+    <style>
+      link-peek[template="custom-template"]:defined a:not([data-key]) {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <h2>Simple example</h2>
+    <h2>Simple template example</h2>
     <template id="link-peek-template">
       <p data-key="data.description"></p>
     </template>
 
     <link-peek api="https://api.microlink.io/?url=${link}">
+      <a href="https://darn.es">David Darnes</a>
+    </link-peek>
+
+    <h2>Custom template example using <code>template</code> attribute</h2>
+
+    <template id="custom-template">
+      <a data-key="data.description, data.url"></a>
+    </template>
+
+    <link-peek
+      api="https://api.microlink.io/?url=${link}"
+      template="custom-template"
+    >
       <a href="https://darn.es">David Darnes</a>
     </link-peek>
   </body>
